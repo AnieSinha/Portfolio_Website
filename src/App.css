@@ -1,0 +1,90 @@
+/* === App container === */
+.App {
+  text-align: center;
+}
+
+/* === Default CRA logo style (if used) === */
+.App-logo {
+  height: 40vmin;
+}
+
+/* === Default header (not critical, keep for structure) === */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+/* === Typography === */
+.heading {
+  color: black;
+}
+
+.subTitle {
+  color: #868e96;
+}
+
+/* === Cursor fix & layout stabilization === */
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  cursor: none; /* hide the system cursor when custom cursor is used */
+}
+
+/* Wrapper that ensures CursorProvider always tracks full area */
+.app-container {
+  width: 100%;
+  height: 100vh; /* ensures full window height */
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Optional: when custom cursor disabled === */
+body.no-custom-cursor {
+  cursor: auto;
+}
+
+/* === Animations === */
+@keyframes fade_down {
+  0% {
+    opacity: 0.01;
+    transform: translateY(-20px);
+    transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+@keyframes fade_up {
+  0% {
+    opacity: 0.01;
+    transform: translateY(20px);
+    transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
